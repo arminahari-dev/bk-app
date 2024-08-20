@@ -1,0 +1,43 @@
+import {CustomProvider, DateRangePicker} from 'rsuite';
+import 'rsuite/dist/rsuite.min.css';
+import {useHeaderFiltersContext} from "../../../providers/header-filters-context/HeaderFiltersContext.jsx";
+import useGetToday from "../../../hooks/get-today/useGetToday.jsx";
+
+export default function DRangePicker(){
+
+    const { SetCheckInDate,SetCheckOutDate }  = useHeaderFiltersContext();
+    const today=useGetToday()
+
+    function handleDateRangeSelection(dateRange) {
+        let startDate = formatDate(dateRange[0]);
+        let endDate = formatDate(dateRange[1]);
+        SetCheckInDate(startDate);
+        SetCheckOutDate(endDate);
+    }
+
+    function formatDate(dr) {
+        const dateStr = dr;
+        const date = new Date(dateStr);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day}`;
+        return formattedDate
+    }
+
+    function resetDate() {
+        SetCheckInDate(today);
+        SetCheckOutDate(today);
+    }
+
+    return (
+        <>
+            <CustomProvider theme="dark">
+                <DateRangePicker onClean={resetDate} onOk={(e)=>{
+                    handleDateRangeSelection(e)
+                }} size="lg" placeholder={"checkin date - checkout date"}/>
+            </CustomProvider>
+        </>
+    )
+}
+

@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:1rem;
+        border: 1px solid white;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    .drop_down{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr ;
+        justify-content: center;
+        align-content: center;
+        gap:1rem;
+
+    }
+    .border_style {
+        border: 1px solid white;
+        transition: border 0.2s ease-in-out;
+        --tw-border-opacity: 0.5;
+    }
+    .border_style:hover {
+        border: 1px solid white;
+    }
+}
