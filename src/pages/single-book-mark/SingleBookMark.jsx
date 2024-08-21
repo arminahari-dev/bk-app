@@ -6,15 +6,18 @@ import BookMarkCard from "../../components/book-mark-card/BookMarkCard.jsx";
 
 export default function SingleBookMark() {
 
-    let [searchParams] = useSearchParams();
+    //const { id } = useParams();
+
+    const [searchParams] = useSearchParams();
+    let id =searchParams.get("id");
 
     const {getSingleBookMark,singleBookMark,isLoadingSingleBookMark} = useBookMarkContext()
-
-    const id =searchParams.get("id");
 
     useEffect(()=>{
         getSingleBookMark(id)
     },[id])
+
+    console.log(singleBookMark)
 
     return(
         <>

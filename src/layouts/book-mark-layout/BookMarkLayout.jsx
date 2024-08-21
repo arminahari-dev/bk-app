@@ -1,12 +1,12 @@
 import {Outlet, useLocation} from "react-router-dom";
 import Map from "../../components/map/Map.jsx";
-import useFetchAllBookMark from "../../hooks/fetch-all-bookmark/useFetchAllBookMark.jsx";
+import {useBookMarkContext} from "../../providers/bookmark-context/BookMarkContext.jsx";
 
 export default function BookMarkLayout() {
 
     const location = useLocation();
 
-    const {allBookMarks} = useFetchAllBookMark()
+    const {allBookMarks} = useBookMarkContext()
 
     return (
         <>

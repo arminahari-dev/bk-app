@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import {useLocation} from "react-router-dom";
 
 const useFetchAllBookMark = () => {
 
@@ -10,8 +11,10 @@ const useFetchAllBookMark = () => {
     const base_Url="http://localhost:5000";
     const path= "bookmarks"
 
+    const location = useLocation()
+
     useEffect(() => {
-        const fetchBookMark = async () => {
+        const fetchAllBookMarks = async () => {
             setLoading(true);
             try {
                 const response = await axios.get(`${base_Url}/${path}`);
@@ -22,8 +25,8 @@ const useFetchAllBookMark = () => {
                 setLoading(false);
             }
         };
-        fetchBookMark();
-    }, [base_Url,path]);
+        fetchAllBookMarks();
+    }, [base_Url,path,location.pathname==="/bookmark"]);
 
     return { allBookMarks, loading, error };
 };

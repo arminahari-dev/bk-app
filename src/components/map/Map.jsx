@@ -10,26 +10,37 @@ const Map = ({markerPosition}) => {
     const [mapCenter, setMapCenter] = useState([51.505,  -0.09]);
     const lat = parseFloat(searchParams.get("lat"))
     const lng = parseFloat(searchParams.get("lon"))
+    const host_location = searchParams.get("host_location")
+    console.log(host_location)
 
-    const {getPosition,position,isLoading} = useGeoLocation()
+    const {getGeoPosition,geoPosition,isLoading} = useGeoLocation()
 
     useEffect(() => {
         if (lat && lng) setMapCenter([lat, lng]);
     }, [lat, lng]);
 
     useEffect(() => {
-        if (position?.lat && position?.lng)
-            setMapCenter([position.lat, position.lng]);
-    }, [position]);
+        if (geoPosition?.lat && geoPosition?.lng)
+            setMapCenter([geoPosition.lat, geoPosition.lng]);
+    }, [geoPosition]);
 
     return (
         <MapContainer center={mapCenter} zoom={13} scrollWheelZoom={true} style={{height: '62vh', width:"100%", borderRadius: "5px"}}>
-            <button className={"absolute top-[10px] right-[10px] z-[1000] bg-purple-500 p-3"} onClick={getPosition}>{isLoading ? "loading" : "use your location"}</button>
+            <button className={"absolute top-[10px] right-[10px] z-[1000] bg-purple-500 p-3"} onClick={getGeoPosition}>{isLoading ? "loading" : "use your location"}</button>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
             <DetectClick />
             <ChangeCenter position={mapCenter}/>
             { lat & lng &&
-                <Marker position={[lat, lng]} />
+                <Marker position={[lat, lng]} >
+                    <Popup>
+                        <div>
+                            <h2 className="card-title text-black text-sm">{host_location}</h2>
+                        </div>
+                    </Popup>
+                </Marker>
+            }
+            { lat & lng &&
+                <Marker position={[lat, lng]}/>
             }
             {markerPosition &&
                 markerPosition.map(location => (
@@ -42,8 +53,8 @@ const Map = ({markerPosition}) => {
                     </Marker>
                 ))
             }
-            { position?.lat && position?.lng &&
-                <Marker position={[position?.lat , position?.lng]}>
+            { geoPosition?.lat && geoPosition?.lng &&
+                <Marker position={[geoPosition?.lat , geoPosition?.lng]}>
                     <Popup>
                         <div>
                             <h2 className="card-title text-black text-sm">your location</h2>
