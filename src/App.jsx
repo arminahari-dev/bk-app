@@ -12,12 +12,10 @@ import AllBookMarkPage from "./pages/all-bookmark/AllBookMarkPage.jsx";
 import BookMarkContext from "./providers/bookmark-context/BookMarkContext.jsx";
 import SingleBookMark from "./pages/single-book-mark/SingleBookMark.jsx";
 import AddNewBookMark from "./pages/add-new-bookmark/AddNewBookMark.jsx";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default function App() {
         return (
             <>
-                <FontAwesomeIcon icon="fa-regular fa-star" />
                 <Toaster />
                     <HeaderFiltersContext>
                         <Header/>

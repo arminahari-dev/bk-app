@@ -1,6 +1,7 @@
 import {UserCircleIcon} from '@heroicons/react/24/solid'
 import {useLocation, useNavigate} from "react-router-dom";
 import Rating from "../Rating/Rating.jsx";
+import Carousel from "../carousel/Carousel.jsx";
 
 export default function LocationCard({location,isLast}) {
 
@@ -32,8 +33,7 @@ export default function LocationCard({location,isLast}) {
           ${url.pathname==="/"&&"shadow-lg shadow-indigo-500/50"} 
           ${url.pathname==="/search-res"&&"cursor-pointer"}`}>
             {
-                xl_picture_url ? <img src={xl_picture_url} alt={name} className="rounded w-[30rem] h-[15rem]"/> :
-                    <img src="https://placehold.co/480x290?text=no-img-to-show"/>
+                xl_picture_url.length === 0 ? <img src="https://placehold.co/480x290?text=no-img-to-show" alt={name}/> : <Carousel xl_picture_url={xl_picture_url}/>
             }
             <div className="mt-3">
                 <h2 className="text-2xl font-bold truncate">{name}</h2>

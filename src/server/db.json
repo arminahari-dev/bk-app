@@ -34,7 +34,13 @@
         "height": 480,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/1333549eac1ff1f91b4443e0dc910c3a"
       },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/74942550/415cd752_original.jpg?aki_policy=x_large",
+      "xl_picture_url": [
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-681034554150437098/original/48978bfa-bb13-4ffe-b018-0accf3f2af7f.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-681034554150437098/original/8026f3e4-9fd7-433a-aa28-a813956f410e.jpg?im_w=1200",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-681034554150437098/original/261bf10b-7b0a-4c50-a46b-2efb75218b4f.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-681034554150437098/original/c82eeac8-e530-4d33-a933-6d720e6cfd49.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/airflow/Hosting-681034554150437098/original/ab042026-7f19-4e5c-8877-974330f17817.jpg?im_w=720"
+      ],
       "host_id": "1195000",
       "host_url": "https://www.airbnb.com/users/show/1195000",
       "host_name": "Linda",
@@ -159,7 +165,12 @@
         "height": 426,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/1293262ae799ac118c65bc0ef90bc3b8"
       },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/eb9e20e1-9c88-43fb-9e0a-e634dfc6e35a.jpg?aki_policy=x_large",
+      "xl_picture_url":[
+        "https://a0.muscache.com/im/pictures/e2753321-1f56-4d6c-ad5b-2e2ea8386473.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/4cd098c6-a08a-41f3-9595-4c2048a3d9fe.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/592e17cd-37e1-4f2e-a17f-438d73b1083d.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/cdf6a5f9-6e76-440d-b6e0-bd63e93bf598.jpg?im_w=720"
+      ],
       "host_id": "47820987",
       "host_url": "https://www.airbnb.com/users/show/47820987",
       "host_name": "Annabel",
@@ -302,7 +313,7 @@
         "height": 426,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/5e156e2781e2590c7ae14b30516a919a"
       },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/10232036/f44402fc_original.jpg?aki_policy=x_large",
+      "xl_picture_url": ["https://a0.muscache.com/im/pictures/10232036/f44402fc_original.jpg?aki_policy=x_large"],
       "host_id": "3897376",
       "host_url": "https://www.airbnb.com/users/show/3897376",
       "host_name": "Oki & Frank",
@@ -430,7 +441,7 @@
         "height": 426,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/7139bb0ddfd791f6b68f9e6462afe974"
       },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/4aad80ac-8a8f-465d-873c-04c951304180.jpg?aki_policy=x_large",
+      "xl_picture_url": ["https://a0.muscache.com/im/pictures/4aad80ac-8a8f-465d-873c-04c951304180.jpg?aki_policy=x_large"],
       "host_id": "17633423",
       "host_url": "https://www.airbnb.com/users/show/17633423",
       "host_name": "Jan Willem",
@@ -573,7 +584,7 @@
         "height": 480,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/3bfbda897a5a3ef02a761d3edb784dfd"
       },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/10553335/64dc1cd3_original.jpg?aki_policy=x_large",
+      "xl_picture_url": ["https://a0.muscache.com/im/pictures/10553335/64dc1cd3_original.jpg?aki_policy=x_large"],
       "host_id": "1446698",
       "host_url": "https://www.airbnb.com/users/show/1446698",
       "host_name": "Eva",
@@ -704,7 +715,7 @@
         "height": 480,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/6351fdb41e5c30c168b2488e052d032f"
       },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/0cfd0182-b3b2-42cf-902f-24cb73a6c82e.jpg?aki_policy=x_large",
+      "xl_picture_url": ["https://a0.muscache.com/im/pictures/0cfd0182-b3b2-42cf-902f-24cb73a6c82e.jpg?aki_policy=x_large"],
       "host_id": "36775877",
       "host_url": "https://www.airbnb.com/users/show/36775877",
       "host_name": "Raquel",
@@ -832,7 +843,7 @@
         "height": 480,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/065e90eb568e7e4e34733eb9d6f3ec76"
       },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/fe92d866-4365-4267-b894-0f75511a6d41.jpg?aki_policy=x_large",
+      "xl_picture_url": ["https://a0.muscache.com/im/pictures/fe92d866-4365-4267-b894-0f75511a6d41.jpg?aki_policy=x_large"],
       "host_id": "15625753",
       "host_url": "https://www.airbnb.com/users/show/15625753",
       "host_name": "Pollo",
@@ -965,7 +976,7 @@
         "height": 426,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/089848e03bb2b3b495ad7dc8f7640af4"
       },
-      "xl_picture_url": null,
+      "xl_picture_url": [],
       "host_id": "14694975",
       "host_url": "https://www.airbnb.com/users/show/14694975",
       "host_name": "Robin&Thaís",
@@ -1098,7 +1109,7 @@
         "height": 426,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/c919a478a118cdd7466dd153867817c7"
       },
-      "xl_picture_url": "https://a0.muscache.com/im/pictures/101261468/5be05a66_original.jpg?aki_policy=x_large",
+      "xl_picture_url": ["https://a0.muscache.com/im/pictures/101261468/5be05a66_original.jpg?aki_policy=x_large"],
       "host_id": "25049789",
       "host_url": "https://www.airbnb.com/users/show/25049789",
       "host_name": "Sanne",
@@ -1239,7 +1250,7 @@
         "height": 426,
         "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/2e202e79e908a132d144cc32168fcfc3"
       },
-      "xl_picture_url": null,
+      "xl_picture_url": [],
       "host_id": "40565986",
       "host_url": "https://www.airbnb.com/users/show/40565986",
       "host_name": "Claudia",
