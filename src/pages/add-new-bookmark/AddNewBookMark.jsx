@@ -69,7 +69,7 @@ export default function AddNewBookMark() {
           )
       }else {
           const newBookMark ={
-              id:Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
+              id:JSON.stringify(Math.floor(Math.random() * (1000 - 1 + 1)) + 1,),
               cityName:city,
               country,
               countryCode,
