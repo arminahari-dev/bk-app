@@ -100,7 +100,7 @@ export default function SearchBar() {
                         className="w-max h-fit border border-white border-opacity-50 p-2 bg-[#2e313e] rounded absolute top-[8rem] z-[999]"
                     >
                         <span className="font-bold">Going to?</span>
-                        <div className={`flex ${filteredCities.length === 1 ? "items-center" : "items-start"} flex-col pt-[13px] gap-2 max-h-[12rem] ${filteredCities.length !== 0 ||cityNames.length !==0 || filteredCities !== ["No results found"] && "overflow-y-scroll"}`}>
+                        <div className={`flex ${filteredCities.length === 1 ? "items-center" : "items-start"} flex-col pt-[13px] gap-2 max-h-[12rem] ${visibleItemsCount > 3  && "overflow-y-scroll"}`}>
                             {displayedItems.map((location, index) => (
                                 <React.Fragment key={index}>
                                     <hr className="h-[0.5px] bg-gray-700 w-[9.5rem]" />
@@ -113,7 +113,7 @@ export default function SearchBar() {
                                 </React.Fragment>
                             ))}
                             {displayedItems.length < (filteredCities.length || cityNames.length) && (
-                                <div className="flex justify-center pt-2 w-[8.75rem]">
+                                <div className="flex justify-center pt-2 w-[9.75rem]">
                                     <a onClick={showMoreItems} className="cursor-pointer">
                                         Show More
                                     </a>
