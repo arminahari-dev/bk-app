@@ -25,7 +25,7 @@ export default function SearchBtn() {
                     pathname: "search-res",
                     search: searchParams.toString()
                 });
-            }} className="flex flex-row items-center gap-[10px] bg-[#2e313e] border_style px-3 py-[10px] rounded-[8px] transition-all duration-300 ease-in-out hover:bg-base-300 hover:text-white">
+            }} className="flex flex-row items-center gap-[10px] bg-[#2e313e] text-white border_style px-3 py-[10px] rounded-[8px]">
                 <span>search</span>
                 <MagnifyingGlassIcon className="size-5 transform transition-transform duration-300 ease-in-out group-hover:scale-110"/>
             </button>

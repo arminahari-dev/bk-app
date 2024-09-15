@@ -71,14 +71,14 @@ export default function SearchBar() {
 
     return (
         <div>
-            <label className="input input-bordered flex items-center gap-2 border_style bg-[#2e313e]">
+            <label className={`input flex items-center font-normal focus-within:border_style hover:border_style gap-2 bg-[#2e313e] cursor-pointer`}>
                 <input
                     value={inputValue}
                     onFocus={onFocusHandler}
                     onChange={onUserSearchHandler}
                     type="text"
-                    className="grow"
-                    placeholder="Where are you going?"
+                    className="grow cursor-pointer tracking-[1px]"
+                    placeholder="Where are you going ?"
                 />
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4 opacity-70">
                     <path
@@ -96,14 +96,14 @@ export default function SearchBar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 0.9, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.2 }}
+                        transition={{ duration: 0.15 }}
                         className="w-max h-fit border border-white border-opacity-50 p-2 bg-[#2e313e] rounded absolute top-[8rem] z-[999]"
                     >
                         <span className="font-bold">Going to?</span>
                         <div className={`flex ${filteredCities.length === 1 ? "items-center" : "items-start"} flex-col pt-[13px] gap-2 max-h-[12rem] ${visibleItemsCount > 3  && "overflow-y-scroll"}`}>
                             {displayedItems.map((location, index) => (
                                 <React.Fragment key={index}>
-                                    <hr className="h-[0.5px] bg-gray-700 w-[9.5rem]" />
+                                    <hr className="h-[0.5px] bg-gray-700 w-[100%]" />
                                     <div
                                         onClick={() => onLocationClick(location)}
                                         className={`font-light ${location === "No results found" ? "" : "cursor-pointer"}`}
