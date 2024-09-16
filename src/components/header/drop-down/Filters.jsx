@@ -8,7 +8,7 @@ export default function Filters() {
         const { bedNumber,setBedNumber }  = useHeaderFiltersContext();
 
         function clearFilterHandler() {
-            setBedroomNumber(1), setBathroomNumber(1) , setBedNumber(1)
+            setBedroomNumber(0), setBathroomNumber(0) , setBedNumber(0)
         }
 
 return(

@@ -2,11 +2,16 @@ import {CustomProvider, DateRangePicker} from 'rsuite';
 import 'rsuite/dist/rsuite.min.css';
 import {useHeaderFiltersContext} from "../../../providers/header-filters-context/HeaderFiltersContext.jsx";
 import useGetToday from "../../../hooks/get-today/useGetToday.jsx";
+import {useEffect, useState} from "react";
+import {useLocation} from "react-router-dom";
 
-export default function DRangePicker(){
+export default function DRangePicker() {
 
-    const { SetCheckInDate,SetCheckOutDate }  = useHeaderFiltersContext();
-    const today=useGetToday()
+    const [isInputActive, setIsInputActive]  = useState(false);
+    const {checkInDate,SetCheckInDate,checkOutDate, SetCheckOutDate} = useHeaderFiltersContext();
+    const today = useGetToday()
+
+    const url = useLocation();
 
     function handleDateRangeSelection(dateRange) {
         let startDate = formatDate(dateRange[0]);
@@ -30,14 +35,32 @@ export default function DRangePicker(){
         SetCheckOutDate(today);
     }
 
+    useEffect(() => {
+        if (checkInDate !== today || checkOutDate !== today) {
+            setIsInputActive(true);
+        } else {
+            setIsInputActive(false);
+        }
+        if (isInputActive){
+            setIsInputActive(false);
+        }
+    }, [url.pathname]);
+
+
     return (
         <>
-            <CustomProvider theme="dark">
-                <DateRangePicker onClean={resetDate} onOk={(e)=>{
+            {isInputActive ? <div className="indicator">
+                <span className="indicator-item badge badge-secondary"></span>
+                <CustomProvider theme="dark">
+                    <DateRangePicker onClean={resetDate} onOk={(e) => {
+                        handleDateRangeSelection(e)
+                    }} size="lg" placeholder={`${checkInDate} - ${checkOutDate}`}/>
+                </CustomProvider>
+            </div>: <CustomProvider theme="dark">
+                <DateRangePicker onClean={resetDate} onOk={(e) => {
                     handleDateRangeSelection(e)
                 }} size="lg" placeholder={"checkin date - checkout date"}/>
-            </CustomProvider>
+            </CustomProvider>}
         </>
     )
 }
-

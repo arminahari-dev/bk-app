@@ -6,7 +6,7 @@ export default function FiltersOption({ type, typeNum, setTypeNum }) {
             className={`flex flex-row items-center justify-between`}>
             <span>{type}</span>
             <div className={"flex items-center justify-center"}>
-                {typeNum > 1 ? (
+                {typeNum > 0 ? (
                     <button onClick={() => setTypeNum(typeNum - 1)}
                             className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg border_style">
                         -
