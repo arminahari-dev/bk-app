@@ -2,11 +2,17 @@ import {UserCircleIcon} from '@heroicons/react/24/solid'
 import {useLocation, useNavigate} from "react-router-dom";
 import Rating from "../Rating/Rating.jsx";
 import Carousel from "../carousel/Carousel.jsx";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSpinner} from "@fortawesome/free-solid-svg-icons";
 
 export default function LocationCard({location,isLast}) {
 
     const navigate=useNavigate()
     const url = useLocation();
+
+    if (!location) {
+        return <FontAwesomeIcon icon={faSpinner} />
+    }
 
     const {
         name,
@@ -28,24 +34,40 @@ export default function LocationCard({location,isLast}) {
     }
 
     return (
-        <div onClick={navigatorHandler} className={`location-card p-4 border rounded mb-4 w-[27rem] h-[28rem] bg-[#2e313e] ]
+        <div className={`location-card p-4 border rounded mb-4 w-[27rem] h-[28rem] bg-[#2e313e] ]
           ${isLast && "border-green-500"}
-          ${url.pathname==="/"&&"shadow-lg shadow-indigo-500/50"} 
-          ${url.pathname==="/search-res"&&"cursor-pointer"}`}>
+          ${url.pathname==="/"&&"shadow-lg shadow-indigo-500/50"}`}>
             {
                 xl_picture_url.length === 0 ? <img src="https://placehold.co/480x290?text=no-img-to-show" alt={name}/> : <Carousel xl_picture_url={xl_picture_url}/>
             }
-            <div className="mt-3">
+            <div onClick={navigatorHandler} className={`mt-3 ${url.pathname === "/search-res" && "cursor-pointer"}`}>
                 <h2 className="text-2xl font-bold truncate">{name}</h2>
                 <p className="text-sm text-gray-400 truncate mt-3">{summary}</p>
-                <div className="flex items-center mt-3">
-                    {
-                        host_picture_url ?
-                            <img src={host_picture_url} alt={host_name} className="w-10 h-10 rounded-full"/> :
-                            <UserCircleIcon className={"w-11 h-11"}/>
-                    }
-                    <span className="ml-2 text-lg">{host_name}</span>
-                </div>
+
+                {url.pathname === "/search-res" ? <div className="flex items-center justify-between mt-3">
+                        <div className={"flex items-center"}>
+                            {
+                                host_picture_url ?
+                                    <img src={host_picture_url} alt={host_name} className="w-10 h-10 rounded-full"/> :
+                                    <UserCircleIcon className={"w-11 h-11"}/>
+                            }
+                            <span className="ml-2 text-lg">{host_name}</span>
+                        </div>
+                        <div>
+                            <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">book now !</button>
+                        </div>
+                    </div> :
+                    <div className="flex items-center mt-3">
+                        {
+                            host_picture_url ?
+                                <img src={host_picture_url} alt={host_name} className="w-10 h-10 rounded-full"/> :
+                                <UserCircleIcon className={"w-11 h-11"}/>
+                        }
+                        <span className="ml-2 text-lg">{host_name}</span>
+                    </div>
+                }
+
+
                 <div className="flex justify-between items-center mt-3">
                     <span className="text-lg">
                         <span className="font-semibold">${price}</span>
