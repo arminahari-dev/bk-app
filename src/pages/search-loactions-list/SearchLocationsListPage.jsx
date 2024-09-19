@@ -28,33 +28,39 @@ export default function SearchLocationsListPage() {
     };
 
     return (
-        <>
-            {loading ? (
-                <Skeleton count={1} />
-            ) : (
-                <LocationCard
-                    key={locationFilter[currentIndex]?.id}
-                    location={locationFilter[currentIndex]}
-                    isLast={locationFilter[currentIndex]?.id === singleLocation[0]?.id}
-                />
-            )}
-
-            <div className="join grid grid-cols-2 mt-4">
-                <button
-                    className="join-item btn btn-outline"
-                    onClick={handlePrev}
-                    disabled={currentIndex === 0}
-                >
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                </button>
-                <button
-                    className="join-item btn btn-outline"
-                    onClick={handleNext}
-                    disabled={currentIndex === locationFilter.length - 1}
-                >
-                    <FontAwesomeIcon icon={faChevronRight} />
-                </button>
+        <div>
+            <div className={"flex justify-between w-[80%]"}>
+                <h1 className={"text-gray-400 flex items-center"}>Results <span className={"font-bold text-lg"}>({locationFilter.length})</span></h1>
+                <></>
             </div>
-        </>
+            <div>
+                {loading ? (
+                    <Skeleton count={1}/>
+                ) : (
+                    <LocationCard
+                        key={locationFilter[currentIndex]?.id}
+                        location={locationFilter[currentIndex]}
+                        isLast={locationFilter[currentIndex]?.id === singleLocation[0]?.id}
+                    />
+                )}
+
+                <div className="join grid grid-cols-2 mt-4">
+                    <button
+                        className="join-item btn btn-outline"
+                        onClick={handlePrev}
+                        disabled={currentIndex === 0}
+                    >
+                        <FontAwesomeIcon icon={faChevronLeft}/>
+                    </button>
+                    <button
+                        className="join-item btn btn-outline"
+                        onClick={handleNext}
+                        disabled={currentIndex === locationFilter.length - 1}
+                    >
+                        <FontAwesomeIcon icon={faChevronRight}/>
+                    </button>
+                </div>
+            </div>
+        </div>
     );
 }

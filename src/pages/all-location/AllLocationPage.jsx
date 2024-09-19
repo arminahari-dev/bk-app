@@ -9,7 +9,7 @@ export default function AllLocationPage() {
     if (error) toast.error(error.message);
 
     return (
-        <div className={`all-location bg-base-300 h-[80%]`}>
+        <div className={`all-location h-[80vh]`}>
             <div className={"flex justify-center text-lg"}>
                 <h1>All Location</h1>
             </div>

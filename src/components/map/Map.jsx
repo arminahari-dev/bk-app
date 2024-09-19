@@ -25,7 +25,7 @@ const Map = ({markerPosition}) => {
     }, [geoPosition]);
 
     return (
-        <MapContainer center={mapCenter} zoom={13} scrollWheelZoom={true} style={{height: '62vh', width:"100%", borderRadius: "5px"}}>
+        <MapContainer center={mapCenter} zoom={13} scrollWheelZoom={true} style={{height: '32rem', width:"74rem", maxWidth:"74rem", borderRadius: "5px"}}>
             <button className={"absolute top-[10px] right-[10px] z-[1000] bg-purple-500 p-3"} onClick={getGeoPosition}>{isLoading ? "loading" : "use your location"}</button>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
             <DetectClick />

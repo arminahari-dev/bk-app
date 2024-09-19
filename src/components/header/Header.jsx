@@ -2,12 +2,11 @@ import DRangePicker from "./date-range-picker/DRangePicker.jsx";
 import SearchBar from "./search-bar/SearchBar.jsx";
 import DropDownButton from "./drop-down-button/DropDownButton.jsx";
 import SearchBtn from "./searchbtn/SearchBtn.jsx";
-import HeaderFiltersContext from "../../providers/header-filters-context/HeaderFiltersContext.jsx";
 
 
 export default function Header() {
     return (
-            <div className="header bg-base-300 flex items-center justify-center gap-[14rem] h-[20vh] pt-[2rem]">
+            <div className="header flex items-center justify-center gap-[14rem] h-[20vh] pt-[2rem]">
                 <div>
                     <a className="btn btn-ghost text-xl">Logo</a>
                 </div>

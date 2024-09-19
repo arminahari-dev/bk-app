@@ -11,14 +11,18 @@ export default function SearchResLayout() {
     return (
         <>
             {
-                emptyRes ? <NotFoundPage/> : <div className={"search-res-layout bg-base-300 grid grid-cols-[35%,65%] items-center justify-items-center h-[80vh] pt-[2rem]"}>
-                    <div className={`dynamic-sidebar`}>
-                        <Outlet/>
+                emptyRes ? <NotFoundPage/> :
+                    <div className={"flex items-center justify-center h-[80vh] flex-col"}>
+                        <div
+                            className={"search-res-layout grid grid-cols-[30%,70%] items-end justify-items-center"}>
+                                <div className={`dynamic-sidebar`}>
+                                    <Outlet/>
+                                </div>
+                                <div className={"map-container w-[95%] z-[2]"}>
+                                    <Map markerPosition={locationFilter}/>
+                                </div>
+                            </div>
                     </div>
-                    <div className={"map-container w-[95%] flex items-center justify-center z-[2]"}>
-                        <Map markerPosition = {locationFilter}/>
-                    </div>
-                </div>
             }
         </>
     )

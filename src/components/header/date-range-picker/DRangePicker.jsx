@@ -56,11 +56,13 @@ export default function DRangePicker() {
                         handleDateRangeSelection(e)
                     }} size="lg" placeholder={`${checkInDate} - ${checkOutDate}`}/>
                 </CustomProvider>
-            </div>: <CustomProvider theme="dark">
+            </div>:
+                <CustomProvider theme="dark">
                 <DateRangePicker onClean={resetDate} onOk={(e) => {
                     handleDateRangeSelection(e)
                 }} size="lg" placeholder={"checkin date - checkout date"}/>
-            </CustomProvider>}
+            </CustomProvider>
+}
         </>
     )
 }
